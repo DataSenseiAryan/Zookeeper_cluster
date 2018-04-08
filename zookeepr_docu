@@ -1,0 +1,86 @@
+
+
+step 1 
+set the hosts (etc/hosts)
+
+step2
+cd /usr/local/zookeeper/conf
+
+step3
+cp zoo_sample.cfg  zoo.cfg
+
+step4
+gedit zoo.cfg
+
+step5 
+copy this 
+
+tickTime=2000
+dataDir=/usr/local/hadoop/zookeeper/data
+clientPort=2181
+initLimit=5
+syncLimit=2
+server.1=slave1:2888:3888
+server.2=slave2:2888:3888
+server.3=slave3:2888:3888
+server.4=slave4:2888:3888
+server.5=slave5:2888:3888
+server.6=slave6:2888:3888
+server.7=slave7:2888:3888
+server.8=slave8:2888:3888
+server.9=slave9:2888:3888
+server.10=slave10:2888:3888
+server.11=slave11:2888:3888
+server.12=slave12:2888:3888
+server.13=slave13:2888:3888
+server.14=slave14:2888:3888
+server.15=slave15:2888:3888
+#server.15=master:2888:3888
+
+
+
+step6  set jdk path
+gedit .bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+source .bashrc
+
+step7
+
+cd /usr/local/zookpeeper/data
+
+gedit myid
+
+step8 copy this remove commnet for respective system 
+
+#1 #for slave1
+#2 #for slave2
+#3 #for slave3
+#4 #for slave4
+#5 #for slave5
+#6 #for slave6
+#7 #for slave7
+#1 #for slave8
+#1 #for slave9
+#10 #for slave10
+#11 #for slave11
+#12 #for slave12
+
+#13 #for slave13
+#14 #for slave14
+#15 #for slave15
+#16 #for master
+
+
+step9 Set path for zookeper folder in bashrc
+
+export ZOOKEEPER_HOME=/usr/local/zookeeper	
+export PATH=$PATH:$ZOOKEEPER_HOME/bin
+
+step9 start zookeeper server
+
+ zkServer.sh start
+
+ zkServer.sh status
+
